@@ -1,12 +1,18 @@
 import com.train.Ticket
 
 fun main(args: Array<String>) {
-    print("Please enter number of tickets:")
-    var ticket = readLine()!!.toInt()
-    print("How many round-trip tickets: ")
-    var round = readLine()!!.toInt()
-    val t = Ticket(ticket, round)
-    t.print()
+    var ticket = 0;
+    while (ticket != -1) {
+        print("Please enter number of tickets:")
+        ticket = readLine()!!.toInt()
+        if (ticket == -1) println("exit")
+        else {
+            print("How many round-trip tickets: ")
+            var round = readLine()!!.toInt()
+            val t = Ticket(ticket, round)
+            t.print()
+        }
+    }
 }
 
 class Ticket(var ticket : Int, var round : Int) {
